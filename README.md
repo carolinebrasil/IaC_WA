@@ -15,18 +15,20 @@ export AWS_DEFAULT_REGION="Adicione a região de sua preferência nessa demo usa
 - Iniciando a configuração do backend do Terraform (arquivo de estado usado pelo TF para salvar os recursos configurados na AWS)
 
 ``` bash
-cd bootstrap
+cd backend
 terraform init
 ```
 - Montando o plano de configuração 
 
 ``` bash
-terraform plan -out demo-iac \
- -var="state_bucket_name=demo-iac-state-bucket"
+terraform plan -out backend-demo-iac \
+ -var="state_bucket_name=demo-iac-state-bucket" \
  -var="state_lock_table_name=demo-iac-tf-lock-table"
 ```
 - Aplicando o plano de configuração 
 
 ``` bash
-terraform apply "demo-iac"
+terraform apply "backend-demo-iac"
 ```
+
+![lab](https://github.com/carolinebrasil/IaC_WA/blob/main/arch.jpeg?raw=true)
