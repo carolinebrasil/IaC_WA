@@ -1,12 +1,14 @@
 data "aws_caller_identity" "current" {}
-data "aws_region" "current" {}
+data "aws_region" "current" {
+  name = "us-west-2"
+}
 locals {
   account_id = data.aws_caller_identity.current.account_id
   region     = data.aws_region.current.name
   tags = {
     description = "aws_community_day_demo_2021"
     webinar     = "5_pilares_WA"
-    date = "28_10_2021"
+    # date = "28_10_2021"
   }
 }
 
@@ -32,10 +34,10 @@ resource "aws_s3_bucket" "this" {
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
-  bucket                 = aws_s3_bucket.this.id
-  block_public_acls      = true
-  block_public_policy    = true
-  ignore_public_acls     = true
+  bucket                  = aws_s3_bucket.this.id
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
   restrict_public_buckets = true
 }
 
