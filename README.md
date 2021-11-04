@@ -33,7 +33,7 @@ terraform apply "backend-demo-iac"
 
 Arquitetura proposta
 
-![lab](https://github.com/carolinebrasil/IaC_WA/images/blob/main/arch.jpeg?raw=true)
+![lab](https://github.com/carolinebrasil/IaC_WA/blob/main/images/arch.jpeg?raw=true)
 
 Iniciando a configuração com infra as code
 
