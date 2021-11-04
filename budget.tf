@@ -12,7 +12,7 @@ resource "aws_budgets_budget" "iac_wa_cost" {
     threshold                  = 50
     threshold_type             = "PERCENTAGE"
     notification_type          = "FORECASTED" #ACTUAL
-    subscriber_email_addresses = ["adassathomaz1@gmail.com","luananadielle@gmail.com","icarolinebrasil@gmail.com"]
+    subscriber_email_addresses = ["adassathomaz1@gmail.com", "luananadielle@gmail.com", "icarolinebrasil@gmail.com"]
 
   }
 }

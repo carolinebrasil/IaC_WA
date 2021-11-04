@@ -19,6 +19,14 @@ output "pub_subnets" {
 
 output "budget_type" {
   description = "Budget type"
-  value = aws_budgets_budget.iac_wa_cost.budget_type
-  
+  value       = aws_budgets_budget.iac_wa_cost.budget_type
+
+}
+
+output "av_zn" {
+  value = ["us-west-2a", "us-west-2b", "us-west-2c"]
+}
+
+output "elb-dns" {
+  value = aws_elb.iac_elb1.dns_name
 }
