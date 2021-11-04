@@ -29,5 +29,5 @@ override.tf.json
 # example: *tfplan*
 *.txt
 
-backend/demo-iac
-vpc/test-vpc
+backend/backend-demo-iac
+iac_wa
