@@ -53,6 +53,6 @@ variable "instance_type" {
 
 variable "key_path" {
   description = "SSH key to access ec2 instances"
-  default     = "/users/caroline/.ssh/id_rsa.pub"
+  default     = "/home/caroline/.ssh/id_rsa.pub"
 
 }

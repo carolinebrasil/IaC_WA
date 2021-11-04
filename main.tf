@@ -1,4 +1,6 @@
 provider "aws" {
+
+  region = var.region
   default_tags {
     tags = {
       description = "aws_community_day_demo_2021"
@@ -72,12 +74,10 @@ resource "aws_autoscaling_policy" "asg-policy_in" {
   autoscaling_group_name = aws_autoscaling_group.iac_scaling_group.name
 }
 
-
 # Load balancer
 resource "aws_elb" "iac_elb1" {
   availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
   security_groups    = ["${aws_security_group.sg_elb1.id}"]
-
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true

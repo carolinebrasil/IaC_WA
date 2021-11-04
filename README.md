@@ -2,7 +2,7 @@
 
 Pré-requisitos 
 
-- Configurar as credenciais da conta AWS
+- Configurar as credenciais da conta AWS e SSH key pair
 
 ```
 export AWS_ACCESS_KEY_ID="Adicione a sua access key ID"
@@ -11,6 +11,15 @@ export AWS_REGION="Adicione a região de sua preferência nessa demo usaremos us
 export AWS_DEFAULT_REGION="Adicione a região de sua preferência nessa demo usaremos us-west-2"
 ```
 
+Altere o caminho da sua chave pública no arquivo variable.tf
+```
+variable "key_path" {
+  description = "SSH key to access ec2 instances"
+  default     = "/users/caroline/.ssh/id_rsa.pub"
+
+}
+
+```
 
 - Iniciando a configuração do backend do Terraform (arquivo de estado usado pelo TF para salvar os recursos configurados na AWS)
 
