@@ -1,7 +1,7 @@
 variable "name_prefix" {
   type        = string
   description = "aws_comm_day_demo_2021"
-  default = "iac_wa_2021"
+  default     = "iac_wa_2021"
 }
 
 variable "pvAZ_CIDRblocks" {
@@ -32,7 +32,7 @@ variable "pvIPv6_prefix" {
 }
 
 variable "region" {
-  type = string
+  type    = string
   default = "us-west-2"
-  
+
 }
