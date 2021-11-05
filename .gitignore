@@ -30,4 +30,4 @@ override.tf.json
 *.txt
 
 backend/backend-demo-iac
-iac_wa
+iac_wa*

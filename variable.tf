@@ -5,40 +5,68 @@ variable "name_prefix" {
   default     = "iac_wa_2021"
 }
 
-
 variable "region" {
   type    = string
   default = "us-west-2"
+}
+
+
+variable "item_count" {
+  description = "Count to set AZs and instances"
+  type        = number
+  default     = 3
+}
+
+# Network
+variable "vpc_cidr" {
+  type    = string
+  default = "10.0.0.0/16"
 
 }
 
-#Network
-variable "pvAZ_CIDRblocks" {
-  type = map(string)
-  default = {
-    a = "10.0.10.0/24",
-    b = "10.0.20.0/24",
-    c = "10.0.30.0/24"
-  }
+# Subnets
+variable "pub_subnet_cidr" {
+  type    = list(string)
+  default = ["10.0.10.0/24", "10.0.20.0/24", "10.0.30.0/24"]
 }
 
-variable "pubAZ_CIDRblocks" {
-  type = map(string)
-  default = {
-    a = "10.0.110.0/24",
-    b = "10.0.120.0/24",
-    c = "10.0.130.0/24"
-  }
+variable "pv_subnet_cidr" {
+  type    = list(string)
+  default = ["10.0.110.0/24", "10.0.120.0/24", "10.0.130.0/24"]
+}
+# AZs
+variable "az_names" {
+  type    = list(string)
+  default = ["us-west-2a", "us-west-2b", "us-west-2c"]
 }
 
-variable "pvIPv6_prefix" {
-  type = map(number)
-  default = {
-    a = 1,
-    b = 2,
-    c = 3
-  }
-}
+
+# variable "pvAZ_CIDRblocks" {
+#   type = map(string)
+#   default = {
+#     a = "10.0.10.0/24",
+#     b = "10.0.20.0/24",
+#     c = "10.0.30.0/24"
+#   }
+# }
+
+# variable "pubAZ_CIDRblocks" {
+#   type = map(string)
+#   default = {
+#     a = "10.0.110.0/24",
+#     b = "10.0.120.0/24",
+#     c = "10.0.130.0/24"
+#   }
+# }
+
+# variable "pvIPv6_prefix" {
+#   type = map(number)
+#   default = {
+#     a = 1,
+#     b = 2,
+#     c = 3
+#   }
+# }
 
 # Compute
 variable "ami" {
