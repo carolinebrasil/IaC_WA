@@ -41,12 +41,7 @@ output "av_zn" {
   value = ["us-west-2a", "us-west-2b", "us-west-2c"]
 }
 
-# output "elb-dns" {
-#   description = "The DNS of ELB"
-#   value       = aws_elb.iac_elb1.dns_name
-# }
-
 output "lb-dns" {
-  description = "The DNS of ALB"
+  description = "The DNS of LB"
   value       = aws_lb.iac_lb1.dns_name
 }
