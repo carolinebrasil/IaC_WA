@@ -64,11 +64,11 @@ resource "aws_default_route_table" "default_route" {
   ]
 }
 
-resource "aws_route_table_association" "pub_subnet_association" {
-  count          = var.item_count
-  subnet_id      = aws_subnet.pub-subnet[count.index].id
-  route_table_id = aws_default_route_table.default_route.id
-}
+# resource "aws_route_table_association" "pub_subnet_association" {
+#   count          = var.item_count
+#   subnet_id      = aws_subnet.pub-subnet[count.index].id
+#   route_table_id = aws_default_route_table.default_route.id
+# }
 
 
 
