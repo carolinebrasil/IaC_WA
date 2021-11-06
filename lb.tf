@@ -55,10 +55,10 @@ resource "aws_lb_target_group" "iac_target_group" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "iac_target_group_at" {
-  count            = var.item_count
-  target_group_arn = aws_lb_target_group.iac_target_group.arn
-  target_id        = aws_launch_template.iac_web.id
-  #target_id = aws_instance.iac_web_instance[count.index].id
-  port      = 80
-}
+# resource "aws_lb_target_group_attachment" "iac_target_group_at" {
+#   count            = var.item_count
+#   target_group_arn = aws_lb_target_group.iac_target_group.arn
+#   target_id        = aws_launch_template.iac_web.id
+#   #target_id = aws_instance.iac_web_instance[count.index].id
+#   port      = 80
+# }
